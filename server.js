@@ -2,8 +2,6 @@ const { app, PORT } = require('./config/config');
 
 const User = require('./model/User');
 
-mongoose.set('strictQuery', false);
-
 app.get('/', (req, res) => {
     // res.send('Hello World');\
     res.send({ title: 'User' });
