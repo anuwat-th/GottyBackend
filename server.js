@@ -9,7 +9,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/send-email', async (req, res) => {
-    const { to, subject, text } = req.body;
+    const to = 'anuwat.one@iclud.com';
+    const subject = 'test email sender';
+    const text = 'Hello World'
+    // const { to, subject, text } = req.body;
     try {
         const response = await sendEmail(to, subject, text);
         res.status(200).send(response);
