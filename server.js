@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     res.send({ title: 'User' });
 });
 
-app.post('/send-email', async (req, res) => {
+app.get('/send-email', async (req, res) => {
     const to = 'anuwat.one@iclud.com';
     const subject = 'test email sender';
     const text = 'Hello World'
