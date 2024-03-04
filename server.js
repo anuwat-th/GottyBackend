@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/send-email', async (req, res) => {
-    const to = 'anuwat.one@iclud.com';
+    const to = 'anuwat.one@icloud.com';
     const subject = 'test email sender';
     const text = 'Hello World'
     // const { to, subject, text } = req.body;
