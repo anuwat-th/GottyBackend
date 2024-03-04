@@ -2,6 +2,7 @@ const { app, PORT } = require('./config/config');
 
 const User = require('./model/User');
 const sendEmail = require('./controller/SendEmail');
+
 app.get('/', (req, res) => {
     // res.send('Hello World');\
     res.send({ title: 'User' });
