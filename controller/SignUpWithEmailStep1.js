@@ -1,8 +1,8 @@
 const emailValidator = require("email-validator");
 
-import GenerateID from "../helper/GenerateID";
-import GenerateOTP from "../helper/GenerateOTP";
-import SendEmailOTP from "../helper/SendEmailOTP";
+const GenerateID = require('../helper/GenerateID');
+const GenerateOTP = require('../helper/GenerateOTP');
+const SendEmailOTP = require('../helper/SendEmailOTP');
 
 const SignUpWithEmailSession = require('../model/SignUpWithEmailSession');
 const User = require('../model/User');
@@ -27,7 +27,7 @@ exports.SignUpWithEmailStep1 = async (req, res) => {
   }
 
   const generatedOtpCode = GenerateOTP(4);
-  
+
   try {
     SendEmailOTP(email, generatedOtpCode);
   } catch {
