@@ -11,4 +11,4 @@ function GenerateOTP(length) {
     return String(number);
 }
 
-export default GenerateOTP;
+module.exports = GenerateOTP;

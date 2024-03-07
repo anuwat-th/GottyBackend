@@ -16,4 +16,4 @@ function GenerateID(length) {
     return result;
 }
 
-export default GenerateID;
+module.exports = GenerateID;

@@ -1,6 +1,6 @@
 const emailValidator = require("email-validator");
 
-const GenerateID = require('../helper/GenerateID');
+const GenerateID = require('../helper/GenerateID').default;
 const GenerateOTP = require('../helper/GenerateOTP');
 const SendEmailOTP = require('../helper/SendEmailOTP');
 
@@ -55,5 +55,3 @@ exports.SignUpWithEmailStep1 = async (req, res) => {
   }
 
 };
-
-/*Hello*/

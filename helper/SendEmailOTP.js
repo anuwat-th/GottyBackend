@@ -40,4 +40,4 @@ function SendEmailOTP(receiverEmail, otpCode) {
     transporter.sendMail(mailOptions);
 }
 
-export default SendEmailOTP;
+module.exports = SendEmailOTP;
