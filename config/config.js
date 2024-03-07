@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT;
 
+app.use(bodyParser.json());
+
 mongoose.set('strictQuery', false);
 
 const connectDB = async () => {
