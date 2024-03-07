@@ -26,7 +26,8 @@ exports.SignUpWithEmailStep1 = async (req, res) => {
     return 0;
   }
 
-
+  const generatedOtpCode = GenerateOTP(4);
+  
   try {
     SendEmailOTP(email, generatedOtpCode);
   } catch {
@@ -34,7 +35,6 @@ exports.SignUpWithEmailStep1 = async (req, res) => {
     return 0;
   }
 
-  const generatedOtpCode = GenerateOTP(4);
   const generatedID = GenerateID(16);
   const startOtpReq = new Date();
 
