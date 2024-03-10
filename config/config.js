@@ -1,29 +1,30 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT;
+const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_DB_NAME = process.env.MONGODB_DB_NAME;
+
 
 app.use(bodyParser.json());
 
-mongoose.set('strictQuery', false);
+async function connectToMongoDB() {
+    if (null) {
+        return null;
+    }
 
-const connectDB = async () => {
+    const client = new MongoClient(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
     try {
-        const connect = await mongoose.connect(process.env.MONGO_URI);
-        console.log(`MongoDB is Connected: ${connect.connection.host}`);
-    } catch (error) {
-        console.log(error);
-        process.exit(1);
+        await client.connect();
+        const database = client.db(MONGODB_DB_NAME);
+        return database;
+    } catch (err) {
+        console.error('Error connecting to MongoDB:', err);
+        throw new Error('Failed to connect to MongoDB');
     }
 }
 
-connectDB().then(()=>{
-    app.listen(PORT, ()=>{
-        console.log(`Listening on port ${PORT}`);
-    })
-});
-
-module.exports = { app, PORT };
+module.exports = { app, connectToMongoDB, PORT };
