@@ -4,7 +4,7 @@ const SendEmailOTP = require('../helper/SendEmailOTP');
 const GenerateID = require('../helper/GenerateID');
 const emailValidator = require('email-validator');
 
-const { connectToMongoDB } = require('../config/config');
+const {getSignUpWithEmailSessionCollection} = require('../model/SignUp')
 
 async function userCollection() {
   const db = await connectToMongoDB();
@@ -52,8 +52,9 @@ const SignUpWithEmailStep1 = async (req, res) => {
 
     try {
       // Save the new SignUpWithEmailSession document to the database
-      const result = await userCollection.insertOne(signUpSession);
-      res.status(200).send('OTP sent successfully', result);
+      const collection = await getSignUpWithEmailSessionCollection();
+      const result = await collection.insertOne(signUpSession);
+      res.status(200).send('OTP sent successfully');
     } catch (error) {
       console.error('Error saving SignUpWithEmailSession:', error);
       res.sendStatus(500);
