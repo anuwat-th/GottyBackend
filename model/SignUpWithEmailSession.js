@@ -14,6 +14,10 @@ const SignUpWithEmailSessionSchema = new Schema({
         type: String,
         required: true,
     },
+    otpCode:{
+        type: String,
+        required: true,
+    },
     startOtpReq: {
         type: Date,
     },
