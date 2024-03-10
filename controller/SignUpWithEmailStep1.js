@@ -47,7 +47,9 @@ const SignUpWithEmailStep1 = async (req, res) => {
     const sessionData = new SignUpWithEmailSession({
       id: generatedID,
       email: email,
-      startOtpReq: startOtpReq
+      startOtpReq: startOtpReq,
+      isOtpPass: false,
+      isEndSession: false,
     });
 
     // Save the new SignUpWithEmailSession document to the database
