@@ -1,5 +1,6 @@
 const { app, connectDB, PORT } = require('./config/config');
 
+const SignUpWithEmailStep1 = require('./controller/SignUpWithEmailStep1');
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 })

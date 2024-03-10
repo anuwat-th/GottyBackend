@@ -1,6 +1,3 @@
-const express = require('express');
-const router = express.Router();
-
 const SignUpWithEmailSession = require('../model/SignUpWithEmailSession');
 
 const GenerateOTP = require('../helper/GenerateOTP');
