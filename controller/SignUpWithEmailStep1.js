@@ -52,7 +52,7 @@ const SignUpWithEmailStep1 = async (req, res) => {
 
     // Save the new SignUpWithEmailSession document to the database
     try {
-      sessionData.save();
+      await sessionData.save(); 
       res.status(200).send('OTP sent successfully');
     } catch (error) {
       console.error('Error saving SignUpWithEmailSession:', error);
