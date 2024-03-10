@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 const connectDB = async () => {
     try {
         await mongoose.connect('mongodb+srv://gotty_user:cHtaLq19UtTC6Fzs@gotty.dpb5z8d.mongodb.net/?retryWrites=true&w=majority&appName=gotty', {
-            useNewUrlParser: true,
             useUnifiedTopology: true,
+            useNewUrlParser: true,
         });
         console.log('MongoDB Connected');
     } catch (error) {
