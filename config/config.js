@@ -12,14 +12,10 @@ app.use(bodyParser.json());
 
 const connectDB = async () => {
     try {
-        await mongoose.connect('mongodb+srv://gotty_user:cHtaLq19UtTC6Fzs@gotty.dpb5z8d.mongodb.net/?retryWrites=true&w=majority&appName=gotty', {
-            useUnifiedTopology: true,
-            useNewUrlParser: true,
-        });
-        console.log('MongoDB Connected');
+        await mongoose.connect('mongodb+srv://gotty_user:cHtaLq19UtTC6Fzs@gotty.dpb5z8d.mongodb.net/?retryWrites=true&w=majority&appName=gotty', {});
+        console.log("CONNECTED TO DATABASE SUCCESSFULLY");
     } catch (error) {
-        console.error('Error connecting to MongoDB:', error.message);
-        process.exit(1); // Exit process with failure
+        console.error('COULD NOT CONNECT TO DATABASE:', error.message);
     }
 };
 
