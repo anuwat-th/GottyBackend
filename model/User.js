@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
+
+async function getUserCollection() {
+    const db = await connectToMongoDB();
+    return db.collection('User');
+}
+
 const UserSchema = new Schema({
     id: {
         type: String,
