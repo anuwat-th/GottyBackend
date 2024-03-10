@@ -23,9 +23,9 @@ const transporter = nodemailer.createTransport({
 const htmlForm = (otpCode) => {
     return (
         `
-            <div>
-                <h1>${otpCode}</h1>
-            </div
+            <div style="width:100%;height:100%;bacground:#FFFFFF;justify-content:center;align-items:center;">
+                <h1 style="font-size:10%;color:#C81D25;">${otpCode}</h1> 
+            </div>
         `
     );
 }
