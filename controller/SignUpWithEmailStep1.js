@@ -1,19 +1,22 @@
-const User = require('../model/User');
+const express = require('express');
+const router = express.Router();
+
+const SignUpWithEmailSession = require('../model/SignUpWithEmailSession');
+
 const GenerateOTP = require('../helper/GenerateOTP');
 const SendEmailOTP = require('../helper/SendEmailOTP');
 const GenerateID = require('../helper/GenerateID');
 const emailValidator = require('email-validator');
 
-const {getSignUpWithEmailSessionCollection} = require('../model/SignUp')
-
-async function userCollection() {
-  const db = await connectToMongoDB();
-  return db.collection('User');
-}
-
 const SignUpWithEmailStep1 = async (req, res) => {
   try {
     const { email } = req.body;
+
+    // Validate the email is null
+    if (email == '') {
+      res.status(400).send('Email is null');
+      return;
+    }
 
     // Validate the email format
     if (!emailValidator.validate(email)) {
@@ -44,16 +47,15 @@ const SignUpWithEmailStep1 = async (req, res) => {
     const startOtpReq = new Date();
 
     // Create a new SignUpWithEmailSession document
-    const signUpSession = new SignUpWithEmailSession({
+    const sessionData = new SignUpWithEmailSession({
       id: generatedID,
       email: email,
       startOtpReq: startOtpReq
     });
 
+    // Save the new SignUpWithEmailSession document to the database
     try {
-      // Save the new SignUpWithEmailSession document to the database
-      const collection = await getSignUpWithEmailSessionCollection();
-      const result = await collection.insertOne(signUpSession);
+      sessionData.save();
       res.status(200).send('OTP sent successfully');
     } catch (error) {
       console.error('Error saving SignUpWithEmailSession:', error);
