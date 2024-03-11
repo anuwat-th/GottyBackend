@@ -1,17 +1,15 @@
 const path = require('path');
 
-const logoImage = require('../asset/image/iconTheme200.png');
-
 const GetLogoImage = async (req, res) => {
     try {
-        // Assuming logoImage is the path to your SVG image
-        const imagePath = path.resolve(__dirname, logoImage);
-        // Send the image file as a response
+        // Assuming 'iconTheme200.png' is in the same directory as this script
+        const imagePath = path.join(__dirname, '../asset/image/iconTheme200.png');
+        // Send the image file as the response
         res.sendFile(imagePath);
-    } catch (err) {
-        // Handle errors
-        console.error("Error:", err);
-        res.status(500).send("Internal Server Error");
+    } catch (error) {
+        console.error('Error sending logo image:', error);
+        // Handle the error and send an appropriate response
+        res.status(500).send('Internal Server Error');
     }
 };
 
