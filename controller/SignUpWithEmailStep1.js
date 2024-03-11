@@ -11,13 +11,13 @@ const SignUpWithEmailStep1 = async (req, res) => {
 
     // Validate the email is null
     if (email == '') {
-      res.status(400).send('Email is null');
+      res.status(201).send('Email is null');
       return;
     }
 
     // Validate the email format
     if (!emailValidator.validate(email)) {
-      res.status(401).send('Invalid email format');
+      res.status(202).send('Invalid email format');
       return;
     }
 
@@ -25,7 +25,7 @@ const SignUpWithEmailStep1 = async (req, res) => {
     const isEmailExist = await User.findOne({ email });
 
     if (isEmailExist) {
-      res.sendStatus(402); // Email already exists
+      res.sendStatus(203); // Email already exists
       return;
     }
 
