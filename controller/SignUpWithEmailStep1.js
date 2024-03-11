@@ -22,12 +22,12 @@ const SignUpWithEmailStep1 = async (req, res) => {
     }
 
     // Check if the email already exists in the database
-    // const isEmailExist = await User.findOne({ email });
+    const isEmailExist = await User.findOne({ email });
 
-    // if (isEmailExist) {
-    //   res.sendStatus(402); // Email already exists
-    //   return;
-    // }
+    if (isEmailExist) {
+      res.sendStatus(402); // Email already exists
+      return;
+    }
 
     // Generate OTP and send it via email
     const generatedOtpCode = GenerateOTP(4);
