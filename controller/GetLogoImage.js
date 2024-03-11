@@ -1,6 +1,6 @@
 const path = require('path');
 
-const logoImage = require('../asset/image/iconTheme200.svg');
+const logoImage = require('../asset/image/iconTheme200.png');
 
 const GetLogoImage = async (req, res) => {
     try {
