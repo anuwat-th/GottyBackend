@@ -24,16 +24,16 @@ const htmlForm = (otpCode) => {
     return (
         `
         <div
-            style="width: 1024px;height: 1024px;margin: 0; background-color: #C81D25; display: flex; flex-direction: column;">
+            style="width: 100%;height: 1024px;margin: 0; background-color: #C81D25; display: flex; flex-direction: column;">
         <img src="https://orange-ant-kit.cyclic.app/gotty-logo" alt="Gotty logo"
             style="width: 224px; height: 224px; margin: 32px auto 0 auto;">
         <div
-            style="width: 1024px; height: 752px;background-color: #FFFFFF; margin: 16px 0 0 0; border-radius: 64px 64px 0 0;">
+            style="width: 100%; height: 752px;background-color: #FFFFFF; margin: 16px 0 0 0; border-radius: 64px 64px 0 0;">
             <h1
-                style="width: 1024px;height: 80px; margin: 48px 0 0 0; color: #C81D25; font: 700 48px Arial, serif;display: flex;align-items: center;justify-content: center;">
+                style="width: 100%;height: 80px; margin: 48px 0 0 0; color: #C81D25; font: 700 48px Arial, serif;display: flex;align-items: center;justify-content: center;">
                 Wellcom to Gotty</h1>
             <p
-                style="width: 1024px;height: 144px;margin: 16px 0 0 0;  color: #333335; font: 400 24px Arial;justify-content: center; display: flex;text-align: center;">
+                style="width: 100%;height: 144px;margin: 16px 0 0 0;  color: #333335; font: 400 24px Arial;justify-content: center; display: flex;text-align: center;">
                 This is your OTP code for Sign up to Gotty, <br>Please do not tell this code to another.
                 the code can available for only 3 minutes.</p>
             <h2
