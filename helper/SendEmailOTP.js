@@ -24,7 +24,7 @@ const htmlForm = (otpCode) => {
     return (
         `
             <div style="margin:0;bacground:#FFFFFF;justify-content:center;align-items:center;">
-                <h1 style="font-size:10%;color:#C81D25;">${otpCode}</h1> 
+                <h1 style="font-size:30px;color:#C81D25;">${otpCode}</h1> 
             </div>
         `
     );
