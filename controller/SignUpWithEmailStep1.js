@@ -1,5 +1,5 @@
 const SignUpWithEmailSession = require('../model/SignUpWithEmailSession');
-
+const User = require('../model/User')
 const GenerateOTP = require('../helper/GenerateOTP');
 const SendEmailOTP = require('../helper/SendEmailOTP');
 const GenerateID = require('../helper/GenerateID');
