@@ -31,7 +31,7 @@ const htmlForm = (otpCode) => {
             style="width: 100%; height: 752px;background-color: #FFFFFF; margin: 16px 0 0 0; border-radius: 64px 64px 0 0;">
             <h1
                 style="width: 100%;height: 80px; margin: 48px 0 0 0; color: #C81D25; font: 700 48px Arial, serif;display: flex;align-items: center;justify-content: center;">
-                Wellcom to Gotty</h1>
+                Welcome to Gotty</h1>
             <p
                 style="width: 100%;height: 144px;margin: 16px 0 0 0;  color: #333335; font: 400 24px Arial;justify-content: center; display: flex;text-align: center;">
                 This is your OTP code for Sign up to Gotty, <br>Please do not tell this code to another.
