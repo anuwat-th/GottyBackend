@@ -24,7 +24,7 @@ const htmlForm = (otpCode) => {
     return (
         `
         <div
-        style="width: 1024px;height: 1024px;margin: 0; background-color: #C81D25; display: flex; flex-direction: column; border: 1px solid black;">
+            style="width: 1024px;height: 1024px;margin: 0; background-color: #C81D25; display: flex; flex-direction: column;">
         <img src="https://orange-ant-kit.cyclic.app/gotty-logo" alt="Gotty logo"
             style="width: 224px; height: 224px; margin: 32px auto 0 auto;">
         <div
