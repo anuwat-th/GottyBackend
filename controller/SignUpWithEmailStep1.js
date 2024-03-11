@@ -22,7 +22,7 @@ const SignUpWithEmailStep1 = async (req, res) => {
     }
 
     // Check if the email already exists in the database
-    const isEmailExist = await User.findOne({ email });
+    const isEmailExist = await User.findOne({ email }).maxTimeMS(30000);
 
     if (isEmailExist) {
       res.sendStatus(203); // Email already exists
