@@ -11,17 +11,18 @@ app.listen(PORT, () => {
 
 connectDB();
 const mockData = async (req, res) => {
+    const userDate = new User({
+        id: 'asdfghjklpoiuyt',
+        handle: 'user1_handle',
+        email: 'user1@example.com',
+        authType: 'google_gmail',
+        password: 'hashed_password_1',
+        username: 'user1_username',
+        createdAt: new Date('2023-01-01'),
+        updatedAt: new Date('2023-01-03')
+    });
     try {
-        const userDate = new User({
-            id: 'asdfghjklpoiuyt',
-            handle: 'user1_handle',
-            email: 'user1@example.com',
-            authType: 'google_gmail',
-            password: 'hashed_password_1',
-            username: 'user1_username',
-            createdAt: new Date('2023-01-01'),
-            updatedAt: new Date('2023-01-03')
-        });
+
         await userDate.save();
         res.status(200).send('OTP sent successfully');
     } catch (error) {
@@ -30,7 +31,7 @@ const mockData = async (req, res) => {
     }
 }
 
-app.post('/inputFake', mockData);
+app.get('/inputFake', mockData);
 app.get('/gotty-logo', GetLogoImage);
 
 app.get('/', (req, res) => {
