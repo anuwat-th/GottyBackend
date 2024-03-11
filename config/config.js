@@ -7,6 +7,8 @@ const PORT = process.env.PORT;
 
 require('dotenv').config();
 
+app.use(express.static('public'));
+
 app.use(bodyParser.json());
 
 const connectDB = async () => {

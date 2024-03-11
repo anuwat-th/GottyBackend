@@ -10,7 +10,7 @@ app.listen(PORT, () => {
 
 connectDB();
 
-app.get('/gotty-logo', GetLogoImage);
+app.get('/gotty-logo', express.static('./asset/image'));
 
 app.get('/', (req, res) => {
     res.send('Hello World. The Server is running');
